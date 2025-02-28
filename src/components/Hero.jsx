@@ -21,6 +21,9 @@ const Hero = () => {
     setLoadedVideos((prev) => prev + 1)
   }
 
+  // 0 % 4 = 0 + 1 = 1
+  // 1 % 4 = 1 + 1 = 2
+  // 4 % 4 = 0 + 1 = 1
   const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
 
   const handleMiniVdClick = () => {
@@ -82,7 +85,7 @@ const Hero = () => {
     <div className="relative h-dvh w-screen overflow-x-hidden">
 
       {isLoading && (
-        <div className="flex-center absolute z-[100%] h-dvh w-screen overflow-hidden bg-violet-50">
+        <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
         
           <div className="three-body">
             <div className="three-body__dot"></div>
@@ -114,6 +117,7 @@ const Hero = () => {
               muted
               id="next-video"
               className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
+              onLoadedData={handleVideoLoad}
             />
 
             <video 
@@ -122,7 +126,7 @@ const Hero = () => {
               loop
               muted
               className="absolute left-0 top-0 size-full object-cover object-center"
-              onLoad={handleVideoLoad}
+              onLoadedData={handleVideoLoad}
             />
         </div>
 
