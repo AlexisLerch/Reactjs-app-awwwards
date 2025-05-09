@@ -1,4 +1,4 @@
-import React from 'react'
+import PropTypes from 'prop-types';
 
 const Button = ({title, id, rightIcon, leftIcon, containerClass}) => {
   return (
@@ -15,5 +15,13 @@ const Button = ({title, id, rightIcon, leftIcon, containerClass}) => {
     </button>
   )
 }
+
+Button.propTypes = {
+  title: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  rightIcon: PropTypes.node,
+  leftIcon: PropTypes.node,
+  containerClass: PropTypes.string,
+};
 
 export default Button

@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
+import PropTypes from 'prop-types'
 import gsap from 'gsap'
 
 const AnimatedTitle = ({title, containerClass}) => {
@@ -37,6 +38,11 @@ const AnimatedTitle = ({title, containerClass}) => {
         ))}
     </div>
   )
+}
+
+AnimatedTitle.propTypes = {
+    title: PropTypes.string.isRequired,
+    containerClass: PropTypes.string
 }
 
 export default AnimatedTitle

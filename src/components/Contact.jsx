@@ -1,12 +1,18 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
+import PropTypes from 'prop-types'
 import Button from './Button'
 import gsap from 'gsap'
 
-const ImageClipBox = ({src, clipClass, }) => (
+const ImageClipBox = ({src, clipClass }) => (
     <div className={clipClass}>
         <img src={src}  />
     </div>
 )
+ImageClipBox.propTypes = {
+    src: PropTypes.string.isRequired,
+    clipClass: PropTypes.string.isRequired,
+};
+
 
 const Contact = () => {
 
@@ -79,7 +85,7 @@ const Contact = () => {
           </div>
         <div className='flex flex-col items-center text-center'>
           {/* <p className='font-general text-[10px] uppercase'>Join Zentry</p> */}
-          <p className='special-font mt-10 w-full font-zentry text-5xl leading-[0.9] md:text-[6rem]'>Let's b<b>u</b>ild the <br /> new era <br /> of g<b>a</b>ming t<b>o</b>gether</p>
+          <p className='special-font mt-10 w-full font-zentry text-5xl leading-[0.9] md:text-[6rem]'>Let&apos;s b<b>u</b>ild the <br /> new era <br /> of g<b>a</b>ming t<b>o</b>gether</p>
 
           <Button title="contact us" containerClass="mt-10 cursor-pointer"/>
         </div>

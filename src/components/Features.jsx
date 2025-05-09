@@ -1,7 +1,12 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { TiLocationArrow } from 'react-icons/ti'
+import PropTypes from 'prop-types'
 
 const BentoTilt = ({ children, className = '' }) => {
+  BentoTilt.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+}
   const[transformStyle, setTransformStyle] = useState('')
   const itemRef = useRef()
 
@@ -34,6 +39,11 @@ const BentoTilt = ({ children, className = '' }) => {
 }
 
 const BentoCard = ({ src, title, description }) => {
+  BentoCard.propTypes = {
+    src: PropTypes.string.isRequired,
+    title: PropTypes.node.isRequired,
+    description: PropTypes.string,
+  };
   return (
     <div className='relative size-full'>
       <video 
@@ -43,11 +53,11 @@ const BentoCard = ({ src, title, description }) => {
         autoPlay
         className='absolute left-0 top-0 size-full object-cover'
       />
-      <div className='relative z-10 flex size-full flex-col justify-between p-5 text-blue-50'>
+      <div className='relative z-10 flex size-full flex-col justify-between p-5 text-blue-50 '>
         <div>
           <h1 className='bento-title special-font'>{title}</h1>
           {description && (
-            <p className='mt-3 max-w-64 text-xs md:text-base'>{description}</p>
+            <p className='mt-3 max-w-64 text-xs md:text-base '>{description}</p> //bg-black bg-opacity-50 border border-black rounded-md
           )}
         </div>
       </div>

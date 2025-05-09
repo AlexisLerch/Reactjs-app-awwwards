@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaDiscord, FaGithub, FaTwitch } from 'react-icons/fa'
 import { FaXTwitter } from "react-icons/fa6";
 
